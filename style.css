@@ -1,0 +1,47 @@
+body {
+    font-family: Arial;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+h1 {
+    color: green;
+}
+
+form input,
+form select {
+    margin: 5px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+form input[readonly] {
+    background-color: #e8e8e8;
+    cursor: not-allowed;
+    color: #333;
+}
+
+button {
+    padding: 8px 15px;
+    background: green;
+    color: white;
+    border: none;
+}
+
+table {
+    margin: 20px auto;
+    background: white;
+}
+
+div {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+canvas {
+    max-width: 320px !important;
+    width: 320px !important;
+    max-height: 200px !important;
+    height: 200px !important;
+}

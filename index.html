@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health & Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Health & Fitness Tracker</h1>
+
+<form id="fitnessForm">
+    <input type="date" id="date" required>
+    <select id="exercise" required>
+        <option value="" disabled selected>Select Exercise</option>
+        <option value="Running">Running</option>
+        <option value="Walking">Walking</option>
+        <option value="Yoga">Yoga</option>
+        <option value="Gym">Gym</option>
+        <option value="Cycling">Cycling</option>
+    </select>
+    <input type="number" id="duration" placeholder="Minutes">
+    <input type="number" id="calories" placeholder="Calories Burned" readonly>
+    <input type="number" id="water" placeholder="Water (L)">
+    <input type="number" id="sleep" placeholder="Sleep (hrs)">
+    <input type="number" id="recoveryRate" placeholder="Recovery %" readonly>
+    
+    <button type="submit">Add</button>
+    <button type="button" id="exportBtn" style="background: #28a745; color: white; border: none; padding: 8px 15px; margin-left: 10px;">Export to Excel</button>
+    <button type="button" id="updateBtn" style="background: #0066cc; color: white; border: none; padding: 8px 15px; margin-left: 10px;">Update Excel</button>
+</form>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Exercise</th>
+            <th>Duration</th>
+            <th>Calories</th>
+            <th>Water</th>
+            <th>Sleep</th>
+            <th>Recovery %</th>
+        </tr>
+    </thead>
+    <tbody id="dataTable"></tbody>
+</table>
+
+<section id="chartsSection" style="margin-top: 20px; background: #fff; padding: 20px; border-radius: 10px;">
+    <h2 style="text-align: center;">Metrics Charts</h2>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+        <div style="width: 320px; padding: 10px; background: #f9f9f9; border-radius: 8px;">
+            <h3 style="text-align:center;">Duration (min)</h3>
+            <canvas id="chartDuration" width="320" height="200"></canvas>
+        </div>
+        <div style="width: 320px; padding: 10px; background: #f9f9f9; border-radius: 8px;">
+            <h3 style="text-align:center;">Calories</h3>
+            <canvas id="chartCalories" width="320" height="200"></canvas>
+        </div>
+        <div style="width: 320px; padding: 10px; background: #f9f9f9; border-radius: 8px;">
+            <h3 style="text-align:center;">Water (L)</h3>
+            <canvas id="chartWater" width="320" height="200"></canvas>
+        </div>
+        <div style="width: 320px; padding: 10px; background: #f9f9f9; border-radius: 8px;">
+            <h3 style="text-align:center;">Sleep (hrs)</h3>
+            <canvas id="chartSleep" width="320" height="200"></canvas>
+        </div>
+    </div>
+</section>
+<div style="width: 320px; margin: auto; padding: 10px;">
+    <h3>Calories</h3>
+    <canvas id="chartCalories" width="320" height="200"></canvas>
+</div>
+<div style="width: 320px; margin: auto; padding: 10px;">
+    <h3>Water (L)</h3>
+    <canvas id="chartWater" width="320" height="200"></canvas>
+</div>
+<div style="width: 320px; margin: auto; padding: 10px;">
+    <h3>Sleep (hrs)</h3>
+    <canvas id="chartSleep" width="320" height="200"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.3.0/dist/exceljs.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
